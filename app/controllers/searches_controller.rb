@@ -4,4 +4,9 @@ class SearchesController < ApplicationController
 
   end
 
+  def new
+
+
+  end
+
 end
