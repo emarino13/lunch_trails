@@ -14,10 +14,11 @@
 ActiveRecord::Schema.define(:version => 20120804211910) do
 
   create_table "lunchtrucks", :force => true do |t|
-    t.string   "full_name",      :null => false
+    t.string   "full_name"
+    t.string   "null"
     t.text     "website"
-    t.string   "twitter_handle", :null => false
-    t.text     "location",       :null => false
+    t.string   "twitter_handle"
+    t.text     "location"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
