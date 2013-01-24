@@ -9,13 +9,12 @@ class Availability < ActiveRecord::Base
                   :created_at,
                   :updated_at)
 
-  validates(:location_lat, :presence => true)
-  validates(:location_long, :presence => true)
   validates(:location_address, :presence => true)
   validates(:start_datetime, :presence => true)
   validates(:end_datetime, :presence => true)
 
   belongs_to(:truck)
+  has_many(:audit_events, :as => :object, :order => :event_timestamp)
   
 end
 

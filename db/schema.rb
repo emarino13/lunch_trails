@@ -11,30 +11,43 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130124025216) do
+ActiveRecord::Schema.define(:version => 20130124182244) do
+
+  create_table "audit_events", :force => true do |t|
+    t.string   "truck_or_user_name"
+    t.datetime "event_timestamp",       :null => false
+    t.string   "object_type"
+    t.integer  "object_id"
+    t.string   "operation_description"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+  end
 
   create_table "availabilities", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.float    "location_lat"
+    t.float    "location_long"
+    t.string   "location_address",     :null => false
+    t.string   "location_description"
+    t.datetime "start_datetime",       :null => false
+    t.datetime "end_datetime",         :null => false
+    t.integer  "truck_id"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
   end
 
-  create_table "lunchtrucks", :force => true do |t|
-    t.string   "full_name"
-    t.string   "null"
-    t.string   "website"
+  create_table "trucks", :force => true do |t|
+    t.string   "truck_name",       :null => false
+    t.string   "password",         :null => false
+    t.string   "contact_name"
+    t.string   "phone"
+    t.string   "email_address",    :null => false
+    t.string   "web_address"
+    t.string   "facebook_name"
+    t.boolean  "post_to_facebook"
     t.string   "twitter_handle"
-    t.string   "facebook_page"
-    t.string   "location"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-  end
-
-  create_table "users", :force => true do |t|
-    t.string   "full_name",  :null => false
-    t.string   "email",      :null => false
-    t.string   "nickname"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.boolean  "post_to_twitter"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
 end

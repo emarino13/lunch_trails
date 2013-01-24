@@ -18,5 +18,6 @@ class Lunchtruck < ActiveRecord::Base
   validates(:email_address, :presence => true)
 
   has_many(:availabilities)
+  has_many(:audit_events, :as => :object, :order => :event_timestamp)
 
 end

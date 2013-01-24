@@ -3,10 +3,10 @@ class CreateAvailabilities < ActiveRecord::Migration
     create_table :availabilities do |t|
       t.float(:location_lat)
       t.float(:location_long)
-      t.string(:location_address)
+      t.string(:location_address, :null => false)
       t.string(:location_description)
-      t.datetime(:start_datetime)
-      t.datetime(:end_datetime)
+      t.datetime(:start_datetime, :null => false)
+      t.datetime(:end_datetime, :null => false)
       t.integer(:truck_id)
 
       t.timestamps
