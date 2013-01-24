@@ -11,19 +11,34 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120804211910) do
+ActiveRecord::Schema.define(:version => 20130124025216) do
 
-  create_table "lunchtrucks", :force => true do |t|
-    t.string   "full_name"
-    t.string   "null"
-    t.string   "website"
-    t.string   "twitter_handle"
-    t.string   "facebook_page"
-    t.string   "location"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+  create_table "availabilities", :force => true do |t|
+    t.string   "location_latlong",    :null => false
+    t.string   "location_address",    :null => false
+    t.string   "location_description"
+    t.time     "start_datetime",      :null => false
+    t.time     "end_datetime",        :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
   end
 
+  create_table "lunchtrucks", :force => true do |t|
+    t.string   "truck_name",          :null => false
+    t.string   "password",            :null => false
+    t.string   "contact_name",        :null => false
+    t.integer  "phone"
+    t.string   "email_address",       :null => false
+    t.string   "web_address",         :null => false
+    t.string   "facebook_name"
+    t.boolean  "post_to_facebook?"
+    t.string   "twitter_handle"
+    t.boolean  "post_to_twitter?"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
+
+#do we need the users table or can we delete the model/migration, etc.,?
   create_table "users", :force => true do |t|
     t.string   "full_name",  :null => false
     t.string   "email",      :null => false
