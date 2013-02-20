@@ -6,20 +6,35 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Lunchtruck.create!(:full_name => 'Comida',
-                   :website => 'www.eatcomida.com',
+Lunchtruck.create!(:truck_name => 'Comida',
+                   :password => 'user1',
+                   :contact_name => 'Rayme Rossello'
+                   :phone => '720-204-6455',
+                   :email_address => 'info@eatcomida.com',
+                   :web_address => 'www.eatcomida.com',
                    :twitter_handle => '@eatcomida',
-                   :facebook_page => 'http://www.facebook.com/pages/Boulder-CO/Comida/288893096153',
-                   :location => '2770 Dagny Way, Lafayette, CO')
+                   :facebook_name => 'http://www.facebook.com/pages/Boulder-CO/Comida/288893096153',
+                   :post_to_facebook? => 'yes',
+                   :post_to_twitter? => 'yes')
 
-Lunchtruck.create!(:full_name => 'Cheese Louise',
-                   :website => 'http://cheeselouisefoodtruck.com',
-                   :facebook_page => 'https://www.facebook.com/CheeseLouiseFoodTruck',
-                   :location => '5718 Central, Boulder, CO')
+Lunchtruck.create!(:truck_name => 'Cheese Louise',
+                   :password => 'user2',
+                   :contact_name => 'kc',
+                   :email_address => 'kc@cheeselouisefoodtruck.com',
+                   :web_address => 'http://cheeselouisefoodtruck.com',
+                   :facebook_name => 'https://www.facebook.com/CheeseLouiseFoodTruck',
+                   :post_to_facebook => 'yes',
+                   :twitter_handle => '@cheesefoodtruck',
+                   :post_to_twitter => 'yes')
 
-Lunchtruck.create!(:full_name => 'The Tasterie Truck',
-                   :website => 'www.thetasterietruck.com',
+Lunchtruck.create!(:truck_name => 'The Tasterie Truck',
+                   :password => 'user3',
+                   :contact_name => 'Nathan',
+                   :phone => '222-222-2222',
+                   :email_address => 'nathan@thetasterietruck.com',
+                   :web_address => 'www.thetasterietruck.com',
                    :twitter_handle => '@TasterieTruck',
-                   :facebook_page => 'http://facebook.com/TheTasterieTruck',
-                   :location => '4880 Pearl East Circle')
+                   :facebook_name => 'http://facebook.com/TheTasterieTruck',
+                   :post_to_twitter => 'yes',
+                   :post_to_facebook => 'yes')
 

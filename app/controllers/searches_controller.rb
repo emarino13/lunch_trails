@@ -5,6 +5,7 @@ class SearchesController < ApplicationController
   end
 
   def new
+    
   end
 
   def create
@@ -12,6 +13,8 @@ class SearchesController < ApplicationController
     addresses = geo.locate(params[:location])
     @latitude = addresses.first.latitude
     @longitude = addresses.first.lng
+    
+#if there is an error from geo locaiton, then render :new. Flash [:error] (look this up-- like a hash called flash)
     render(:new)
   end
 
