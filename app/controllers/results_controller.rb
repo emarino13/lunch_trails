@@ -1,4 +1,4 @@
-class CreatesController < SearchesController 
+class ResultsController < SearchesController 
 
 	def index
       
