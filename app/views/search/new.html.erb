@@ -1,21 +1,20 @@
-<div class = "column1">
-  <h1> Welcome to Lunch Trails </h1>
-  <h2> Helping hungry herds everywhere find lunch! </h2>
+<div class="column1">
+  <h1> Welcome to Lunch Trails</h1>
+  <h2> Helping hungry herds everywhere find lunch!</h2>
 </div>
 
-<div class = "column2">
-  <a href = "/lunchtrucks/new" method="get" ><button>Lunch Truck Login Here </button></a>
+<div class="column2">
+  <a href="/trucks/new" method="get" ><button>Lunch Truck Login Here</button></a>
 </div>
 
-<form action ="/creates" method="post">
-  <label >Enter your current location:</label>
-  <input type="text" name="location"/>
+<%= form_tag("/search/create", :method => :post) do -%>
+	<label>Enter your current location:</label>
+	<%= text_field_tag :location, "" %>
 
-  <label> Radius from your location:</label>
-<SELECT name ="Radius">
-  <OPTION value="2 miles"> 2 miles </OPTION>
-  <OPTION value="5 miles"> 5 miles </OPTION>
-  <OPTION value="10 miles"> 10 miles </OPTION>
-</SELECT>
-<input type ="submit" name ="submit" value="Search"/>
-</form>
+  	<label>Radius from your location:</label>
+	<%= select_tag :radius, options_for_radius %>
+	
+	<%= submit_tag "Search" %>
+<% end -%>
+
+<%= render :partial => 'search_results' %>

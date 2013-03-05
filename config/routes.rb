@@ -2,10 +2,9 @@ LunchTrails::Application.routes.draw do
 
   #devise_for :users
 
-  root(:to => 'searches#new')
-  resources :searches
-  resources :creates
-  resources :lunchtrucks
+  root(:to => 'search#new')
+  match "/search/create" => "search#create"
+  resources :trucks
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
