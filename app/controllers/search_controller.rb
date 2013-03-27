@@ -4,10 +4,11 @@ class SearchController < ApplicationController
     @search = {:location => "", :results => [], :model_name => "Search"}
   end
   
-  def create
+  def create #same as saying "Search"
     # Acquire latitude & longitude through params or geocoding.
     if params[:latitude].blank? || params[:longitude].blank?
-      geo = Google::Geo.new("X")
+      geo = Google::Geo.new("")
+      #get a key from Google to get this working
       begin
         addresses = geo.locate(params[:location])
       rescue Google::Geo::UnknownAddressError

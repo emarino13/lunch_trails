@@ -1,4 +1,4 @@
-class TrucksController < SearchesController 
+class TrucksController < ApplicationController 
 
   def index
   end
